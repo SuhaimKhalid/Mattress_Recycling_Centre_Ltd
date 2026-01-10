@@ -1,35 +1,107 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "bootstrap/dist/css/bootstrap.min.css";
+import { TopHeader } from "./Components/TopHeader";
+import { FooterSection } from "./Components/FooterSection";
+
+import cover from "./assets/Images/1.jpg";
+
+import Pocket_Springs from "./assets/Images/2.jpg";
+
+import Metal_Springs from "./assets/Images/3.jpg";
+
+import Shoddy_Pads from "./assets/Images/4.JPG";
+
+import Polyester from "./assets/Images/11.JPG";
+
+import Foam from "./assets/Images/Foam.JPG";
+
+const App: React.FC = () => {
+  const sliderImages = [
+    {
+      src: cover,
+      alt: "Cover",
+    },
+    {
+      src: Pocket_Springs,
+      alt: "Pocket Springs",
+    },
+    {
+      src: Metal_Springs,
+      alt: "Metal Springs",
+    },
+    {
+      src: Shoddy_Pads,
+      alt: "Shoddy Pads",
+    },
+    {
+      src: Polyester,
+      alt: "Polyester",
+    },
+    {
+      src: Foam,
+      alt: "Foam",
+    },
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <TopHeader />
+      <main>
+        <section className="mission_section text-center py-4">
+          <div className="container">
+            <p className="mission_text">
+              With the mission of diverting as many mattresses as possible from
+              ending up un-recycled in landfills or general waste sites.
+              <b> Mattress Recycling Centre Leeds Ltd </b>
+              offers the public and businesses the opportunity to recycle
+              uncontaminated mattresses. This process allows all materials and
+              components to be recovered, reprocessed, and returned to
+              manufacturers for use in producing new, sustainable products.
+            </p>
+          </div>
+        </section>
 
-export default App
+        <section className="image_section">
+          <div className="container">
+            <div className="row">
+              {sliderImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="col-lg-6 col-md-6 col-sm-6 col-6 Images_col"
+                >
+                  <img src={img.src} alt={img.alt} />
+                  <p className="image_txt">{img.alt}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="second_section">
+          <div className="container">
+            <ul>
+              <li>
+                We also provide a disposal option for wet, dirty, and
+                contaminated mattresses. Any recoverable materials, such as
+                metal, are removed, and the remaining waste is sent for
+                incineration to minimise landfill use.
+              </li>
+              <li>
+                From a single mattress drop-off to a full lorry load, we welcome
+                all your recycling needs with care.
+              </li>
+              <li>
+                For information, bookings, or advice, please feel free to
+                contact our team.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <FooterSection />
+    </>
+  );
+};
+
+export default App;
