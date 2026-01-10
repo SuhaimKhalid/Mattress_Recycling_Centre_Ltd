@@ -10,11 +10,11 @@ import Pocket_Springs from "./assets/Images/2.jpg";
 
 import Metal_Springs from "./assets/Images/3.jpg";
 
-import Shoddy_Pads from "./assets/Images/5.png";
+import Shoddy_Pads from "./assets/Images/4.jpeg";
 
-import Polyester from "./assets/Images/s2.jpg";
+import Polyester from "./assets/Images/5.jpeg";
 
-import Foam from "./assets/Images/s2.jpg";
+import Foam from "./assets/Images/6.jpeg";
 
 const App: React.FC = () => {
   const sliderImages = [
